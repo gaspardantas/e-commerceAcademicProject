@@ -1,7 +1,4 @@
 <!-- Display Products Categories -->
-<div class="list-group">
-    <a href="#" class="list-group-item active">Games For Computer</a>
-    <a href="#" class="list-group-item">...</a>
-    <a href="#" class="list-group-item">...</a>
-    <a href="#" class="list-group-item">...</a>
+<div class="col-md-12 p-0">
+    <h4 class="animated-text">Games for Computer-></h4>
 </div>
