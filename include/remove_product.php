@@ -61,14 +61,13 @@ if (isset($_POST['remove'])) {
                 ?>
                     <tr>
                         <td class="p-3 bg-light text-center border">
-                            <img src="../images/<?php echo $row['product_image'] ?>" alt="image of product" style="height: 70px;">
-                            <div><?php echo $row['product_image'] ?> </div>
+                            <img src="../images/<?php echo $row['product_image'] ?>" alt="image of product" style="height: 150px;">
                         </td>
                         <td class="p-3 bg-light text-center border">
                             <div><?php echo $row['product_name'] ?> </div>
                         </td>
                         <td class="p-3 bg-light text-center border">
-                            <div><?php echo $row['product_price'] ?> </div>
+                            <div><?php echo "$".$row['product_price'] ?> </div>
                         </td>
                         <td class="p-3 bg-light text-center border">
                             <form action="remove_product.php" method="post">

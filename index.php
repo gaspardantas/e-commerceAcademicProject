@@ -7,7 +7,6 @@
   <title>GameSpark</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
   <!--Style for the page-->
   <style>
     /*product image attribute*/
@@ -16,32 +15,25 @@
       height: 300px;
       object-fit: contain;
     }
-
     /*Animation for sidebar*/
     @keyframes updown {
       0% {
         transform: translateY(0);
       }
-
       50% {
-        transform: translateY(920px);
+        transform: translateY(880px);
       }
-
       100% {
         transform: translateY(0);
       }
     }
-
     /*Animation speed*/
     .animated-text {
       animation: updown 5s infinite;
     }
   </style>
-
 </head>
-
 <!--Body-->
-
 <body>
   <?php include './include/navbar.php'; ?>
   <div class="container-fluid mt-3">

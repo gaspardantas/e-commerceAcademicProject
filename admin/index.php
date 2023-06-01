@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!--Style -->
-
 </head>
-
 <!--Body-->
 
 <body>
     <?php include '../include/navbar_admin.php'; ?>
-    <h1 class="text-center">As an Administrtor, you can do the following:</h1>
+    <div class="d-flex justify-content-center align-items-center">
+        <img src="../images/admin.jpeg" height="300" width="300" alt="Admin Image">
+    </div>
 
-    <div class="container d-flex justify-content-center bg-secondary text-light">
+    <!-- <div class="container d-flex justify-content-center bg-secondary text-light">
         <table class="table text-center">
             <thead>
                 <tr>
@@ -48,7 +48,7 @@
                 </tr>
             </tbody>
         </table>
-    </div>
+    </div> -->
 
 
 
