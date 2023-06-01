@@ -2,12 +2,13 @@
 <!DOCTYPE html>
 <html>
 <!--Head-->
+
 <head>
   <title>GameSpark</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  
-  <!--Style for the page--> 
+
+  <!--Style for the page-->
   <style>
     /*product image attribute*/
     .card-img-top {
@@ -15,18 +16,22 @@
       height: 300px;
       object-fit: contain;
     }
+
     /*Animation for sidebar*/
     @keyframes updown {
       0% {
         transform: translateY(0);
       }
+
       50% {
         transform: translateY(920px);
       }
+
       100% {
         transform: translateY(0);
       }
     }
+
     /*Animation speed*/
     .animated-text {
       animation: updown 5s infinite;
@@ -36,6 +41,7 @@
 </head>
 
 <!--Body-->
+
 <body>
   <?php include './include/navbar.php'; ?>
   <div class="container-fluid mt-3">
@@ -50,7 +56,7 @@
       </div>
     </div>
   </div>
-
+  <!--Display footer-->
   <?php include './include/footer.php'; ?>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

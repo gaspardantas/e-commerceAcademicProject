@@ -15,22 +15,52 @@
 
 <body>
     <?php include '../include/navbar_admin.php'; ?>
+    <h1 class="text-center">As an Administrtor, you can do the following:</h1>
 
-    <div class="container-fluid mt-3">
-        <div class="row">
-            <div class="col-md-3 bg-light">
-                <!--2 columns space for Categories-->
-                <?php include 'sidebar.php'; ?>
-            </div>
-            <div class="col-md-9">
-                <!--10 columns space for products-->
-                <?php include 'product_listing.php'; ?>
-            </div>
-        </div>
+    <div class="container d-flex justify-content-center bg-secondary text-light">
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>Link</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Insert Product</td>
+                    <td>To add any product in the the database</td>
+                </tr>
+                <tr>
+                    <td>Remove Product</td>
+                    <td>To remove any product from the database</td>
+                </tr>
+                <tr>
+                    <td>Purchase History</td>
+                    <td>To list all user's purchase history</td>
+                </tr>
+                <tr>
+                    <td>List Users</td>
+                    <td>To list all user's name/email</td>
+                </tr>
+                <tr>
+                    <td>Logout</td>
+                    <td>To end the session</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <?php include '../footer.php'; ?>
 
+
+
+
+
+
+
+
+
+    <!--Display footer-->
+    <?php include '../include/footer.php'; ?>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>

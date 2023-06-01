@@ -27,9 +27,7 @@ if (isset($_POST['insert_product'])) {
         if ($result_query) {
             echo "<script>alert('Product added to the database')</script>";
             echo "<script>window.location.href = '../admin/index.php'</script>";
-            
         }
-
     }
 }
 ?>
@@ -45,11 +43,13 @@ if (isset($_POST['insert_product'])) {
 </head>
 
 <body class="bg-light">
+    <!--display admin Navigation bar-->
+    <?php include '../include/navbar_admin.php'; ?>
     <div class="container mt-3">
         <h1 class="text-center">Insert Products</h1>
     </div>
     <!--Form-->
-    
+
     <form action="" method="post" enctype="multipart/form-data">
         <!--Title ninput name used in isset above-->
         <div class="form-outline mb-4 w-50 m-auto">
@@ -58,19 +58,21 @@ if (isset($_POST['insert_product'])) {
         </div>
         <!--Image-->
         <div class="form-outline mb-4 w-50 m-auto">
-            <label for="product_image" class="form-label">Product Image</label>
+            <label for="product_image" class="form-label mt-3">Product Image</label>
             <input type="file" name="product_image" id="product_image" class="form-control" required="required">
         </div>
         <!--Price-->
         <div class="form-outline mb-4 w-50 m-auto">
-            <label for="product_price" class="form-label">Product Price</label>
+            <label for="product_price" class="form-label mt-3">Product Price</label>
             <input type="text" name="product_price" id="product_price" class="form-control" placeholder="Enter product price" autocomplete="off" required="required">
         </div>
         <!--Insert button input name used in isset above-->
         <div class="form-outline mb-4 w-50 m-auto">
-            <input type="submit" name="insert_product" class="btn btn-info mb-3 px-3" value="Insert product">
+            <input type="submit" name="insert_product" class="btn btn-success mb-3 mt-3 px-3" value="Insert product">
         </div>
     </form>
+    <!--Display footer-->
+    <?php include './footer.php'; ?>
 </body>
 
 </html>

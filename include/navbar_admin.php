@@ -9,6 +9,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
+                <a class="nav-link" href="../admin/index.php"><i class="fas fa-home"></i>Home</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="../include/insert_product.php"><i class="fas fa-file"></i>Insert Product</a>
             </li>
             <li class="nav-item">
@@ -18,7 +21,7 @@
                 <a class="nav-link" href="purchase_history.php"><i class="fas fa-history"></i>Purchase History</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="login.php"><i class="fas fa-list"></i>List User emails</a>
+                <a class="nav-link" href="login.php"><i class="fas fa-list"></i>List Users</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>

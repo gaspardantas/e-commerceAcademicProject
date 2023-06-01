@@ -42,48 +42,51 @@ if (isset($_POST['remove'])) {
 </head>
 
 <body>
+    <!--display admin Navigation bar-->
+    <?php include '../include/navbar_admin.php'; ?>
     <div class="container-fluid mt-3">
         <h1 class="text-center">Remove Products</h1>
         <div class="row justify-content-center">
-        <!--Table-->
-        <table b-5>
-            <tr>
-                <th class="p-3 bg-success text-center text-light">Product Image</th>
-                <th class="p-3 bg-dark text-center text-light">Product Name</th>
-                <th class="p-3 bg-info text-center text-light">Product Price</th>
-                <th class="p-3 bg-warning text-center text-light">Action</th>
-            </tr>
-            <!--While loop to put products into the table-->
-            <?php while ($row = mysqli_fetch_assoc($result)) {
-                //put product info
-            ?>
+            <!--Table-->
+            <table b-5>
                 <tr>
-                    <td class="p-3 bg-light text-center border">
-                        <img src="../images/<?php echo $row['product_image'] ?>" alt="image of product" style="height: 70px;">
-                        <div><?php echo $row['product_image'] ?> </div>
-                    </td>
-                    <td class="p-3 bg-light text-center border">
-                        <div><?php echo $row['product_name'] ?> </div>
-                    </td>
-                    <td class="p-3 bg-light text-center border">
-                        <div><?php echo $row['product_price'] ?> </div>
-                    </td>
-                    <td class="p-3 bg-light text-center border">
-                        <form action="remove_product.php" method="post">
-                            <input type="hidden" name="id" value="<?php echo $row['product_id'] ?>">
-                            <input type="hidden" name="image" value="<?php echo $row['product_image'] ?>">
-                            <input type="hidden" name="name" value="<?php echo $row['product_name'] ?>">
-                            <button type="submit" class="btn btn-danger mx-2" name="remove">Remove this product</button>
-                        </form>
-                    </td>
+                    <th class="p-3 bg-success text-center text-light">Product Image</th>
+                    <th class="p-3 bg-dark text-center text-light">Product Name</th>
+                    <th class="p-3 bg-info text-center text-light">Product Price</th>
+                    <th class="p-3 bg-warning text-center text-light">Action</th>
                 </tr>
-            <?php //end loop
-            }
-            ?>
-        </table>
+                <!--While loop to put products into the table-->
+                <?php while ($row = mysqli_fetch_assoc($result)) {
+                    //put product info
+                ?>
+                    <tr>
+                        <td class="p-3 bg-light text-center border">
+                            <img src="../images/<?php echo $row['product_image'] ?>" alt="image of product" style="height: 70px;">
+                            <div><?php echo $row['product_image'] ?> </div>
+                        </td>
+                        <td class="p-3 bg-light text-center border">
+                            <div><?php echo $row['product_name'] ?> </div>
+                        </td>
+                        <td class="p-3 bg-light text-center border">
+                            <div><?php echo $row['product_price'] ?> </div>
+                        </td>
+                        <td class="p-3 bg-light text-center border">
+                            <form action="remove_product.php" method="post">
+                                <input type="hidden" name="id" value="<?php echo $row['product_id'] ?>">
+                                <input type="hidden" name="image" value="<?php echo $row['product_image'] ?>">
+                                <input type="hidden" name="name" value="<?php echo $row['product_name'] ?>">
+                                <button type="submit" class="btn btn-danger mx-2" name="remove">Remove this product</button>
+                            </form>
+                        </td>
+                    </tr>
+                <?php //end loop
+                }
+                ?>
+            </table>
         </div>
     </div>
-
+    <!--Display footer-->
+    <?php include './footer.php'; ?>              
 </body>
 
 </html>

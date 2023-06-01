@@ -9,6 +9,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
+                <a class="nav-link" href="../index.php"><i class="fas fa-home"></i>Home</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="./include/cart.php"><i class="fas fa-shopping-cart"></i> Cart</a>
             </li>
             <li class="nav-item">
