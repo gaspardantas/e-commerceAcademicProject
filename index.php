@@ -21,7 +21,7 @@
         transform: translateY(0);
       }
       50% {
-        transform: translateY(880px);
+        transform: translateY(910px);
       }
       100% {
         transform: translateY(0);
@@ -29,7 +29,7 @@
     }
     /*Animation speed*/
     .animated-text {
-      animation: updown 5s infinite;
+      animation: updown 7s infinite;
     }
   </style>
 </head>

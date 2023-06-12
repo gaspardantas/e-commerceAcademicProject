@@ -12,7 +12,7 @@
                 <a class="nav-link" href="index.php"><i class="fas fa-home"></i>Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./include/cart.php"><i class="fas fa-shopping-cart"></i> Cart</a>
+                <a class="nav-link" href="./include/cart.php"><i class="fas fa-shopping-cart"></i> Cart<sup>0</sup></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="./include/purchase_history.php"><i class="fas fa-history"></i>Purchase History</a>

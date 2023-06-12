@@ -12,7 +12,7 @@ include('connect.php');
     $product_price=$row['product_price'];
     $product_image=$row['product_image'];
     echo "<div class='col-md-4 '>
-    <div class='card'>
+    <div class='card mt-2 mb-2'>
       <img class='card-img-top' src='./images/$product_image' alt='Card image'>
       <div class='card-body'>
         <h5 class='card-title'>$product_title</h5>
