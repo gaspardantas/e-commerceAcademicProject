@@ -18,13 +18,13 @@
                 <a class="nav-link" href="../include/remove_product.php"><i class="fas fa-trash"></i>Remove Product</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="purchase_history.php"><i class="fas fa-history"></i>Purchase History</a>
+                <a class="nav-link" href="../include/construction_admin.php"><i class="fas fa-history"></i>Purchase History</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="login.php"><i class="fas fa-list"></i>List Users</a>
+                <a class="nav-link" href="../include/construction_admin.php"><i class="fas fa-list"></i>List Users</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                <a class="nav-link" href="../include/construction_admin.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
             </li>
         </ul>
     </div>

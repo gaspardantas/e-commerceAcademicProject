@@ -67,7 +67,7 @@ if (isset($_POST['remove'])) {
                             <div><?php echo $row['product_name'] ?> </div>
                         </td>
                         <td class="p-3 bg-light text-center border">
-                            <div><?php echo "$".$row['product_price'] ?> </div>
+                            <div><?php echo "$" . $row['product_price'] ?> </div>
                         </td>
                         <td class="p-3 bg-light text-center border">
                             <form action="remove_product.php" method="post">
@@ -85,7 +85,7 @@ if (isset($_POST['remove'])) {
         </div>
     </div>
     <!--Display footer-->
-    <?php include './footer.php'; ?>              
+    <?php include './footer.php'; ?>
 </body>
 
 </html>
