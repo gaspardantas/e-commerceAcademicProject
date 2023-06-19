@@ -1,3 +1,8 @@
+<?php
+include('connect.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,8 +23,8 @@
                 <form action="" method="post">
                     <div class="form-outline">
                         <!-- User name field -->
-                        <label for="user_name" class="form-label py-3">Username:</label>
-                        <input type="text" id="user_name" class="form-control" placeholder="Please enter your username" autocomplete="off" required="required" name="user_name">
+                        <label for="username" class="form-label py-3">Username:</label>
+                        <input type="text" id="username" class="form-control" placeholder="Please enter your username" autocomplete="off" required="required" name="username">
                         <!-- User address field -->
                         <label for="user_address" class="form-label py-3">Address:</label>
                         <input type="text" id="user_address" class="form-control" placeholder="Please enter your address" autocomplete="off" required="required" name="user_address">
@@ -29,9 +34,6 @@
                         <!-- User password field -->
                         <label for="user_password" class="form-label py-3">Password:</label>
                         <input type="text" id="user_password" class="form-control" placeholder="Please enter your password" autocomplete="off" required="required" name="user_password">
-                        <!-- Confirm password field -->
-                        <label for="conf_user_password" class="form-label py-3">Confirm Password:</label>
-                        <input type="text" id="conf_user_password" class="form-control" placeholder="Confirm your password" autocomplete="off" required="required" name="conf_user_password">
                     </div>
                     <div class="text-center py-3">
                         <input type="submit" value="Register" class="bg-info py-2 px-2 border-0" name="user_register">
@@ -44,3 +46,28 @@
 </body>
 
 </html>
+
+<?php
+if (isset($_POST['user_register'])) {
+    $username = $_POST['username'];
+    $user_address = $_POST['user_address'];
+    $user_email = $_POST['user_email'];
+    $user_password = $_POST['user_password'];
+    // Check if username is in the database
+    $select_query = "Select * from `user` where user_email='$user_email'";
+    $result = mysqli_query($con, $select_query);
+    $rows_count = mysqli_num_rows($result);
+    if ($rows_count > 0) {
+        echo "<script>alert('This email was registered before, please Log in')</script>";
+    } else {
+        // Insert info into the database
+        $insert_user = "INSERT INTO `user` (user_name, user_address, user_email, user_password) VALUES ('$username', '$user_address', '$user_email', '$user_password')";
+        $result_query = mysqli_query($con, $insert_user);
+        if ($result_query) {
+            echo "<script>alert('User added successfully')</script>";
+        } else {
+            die(mysqli_error($con));
+        }
+    }
+}
+?>

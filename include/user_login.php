@@ -18,7 +18,7 @@
                 <form action="" method="post">
                     <div class="form-outline">
                         <!-- User name field -->
-                        <label for="user_name" class="form-label py-3">Username:</label>
+                        <label for="user_name" class="form-label py-3">User email:</label>
                         <input type="text" id="user_name" class="form-control" placeholder="Please enter your username" autocomplete="off" required="required" name="user_name">
                         <!-- User password field -->
                         <label for="user_password" class="form-label py-3">Password:</label>
