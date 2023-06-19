@@ -74,7 +74,7 @@ if (isset($_POST['user_register'])) {
     $user_password = $_POST['user_password'];
     //hashing the password for security
     $hash_password = password_hash($user_password, PASSWORD_DEFAULT);
-    // Check if username is in the database
+    // Check if user email is in the database
     $select_query = "Select * from `user` where user_email='$user_email'";
     $result = mysqli_query($con, $select_query);
     $rows_count = mysqli_num_rows($result);

@@ -15,18 +15,22 @@
       height: 300px;
       object-fit: contain;
     }
+
     /*Animation for sidebar*/
     @keyframes updown {
       0% {
         transform: translateY(0);
       }
+
       50% {
         transform: translateY(910px);
       }
+
       100% {
         transform: translateY(0);
       }
     }
+
     /*Animation speed*/
     .animated-text {
       animation: updown 7s infinite;
@@ -34,8 +38,17 @@
   </style>
 </head>
 <!--Body-->
+
 <body>
+  <!--Nav -bar-->
   <?php include './include/navbar.php'; ?>
+  <!--Welcome line-->
+  <div class="d-flex bg-secondary text-light justify-content-center align-items-center">
+    <div class="row">
+      <h5>Welcome Guest</h5>
+    </div>
+  </div>
+  <!--Side-bar and list of cards-->
   <div class="container-fluid mt-3">
     <div class="row">
       <div class="col-md-3 bg-light">

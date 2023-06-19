@@ -1,3 +1,7 @@
+<?php
+include('connect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,8 +22,8 @@
                 <form action="" method="post">
                     <div class="form-outline">
                         <!-- User name field -->
-                        <label for="user_name" class="form-label py-3">User email:</label>
-                        <input type="text" id="user_name" class="form-control" placeholder="Please enter your username" autocomplete="off" required="required" name="user_name">
+                        <label for="user_email" class="form-label py-3">User email:</label>
+                        <input type="text" id="user_email" class="form-control" placeholder="Please enter your username" autocomplete="off" required="required" name="user_email">
                         <!-- User password field -->
                         <label for="user_password" class="form-label py-3">Password:</label>
                         <input type="password" id="user_password" class="form-control" placeholder="Please enter your password" autocomplete="off" required="required" name="user_password">
@@ -53,3 +57,28 @@
         }
     });
 </script>
+
+<!-- PHP code to login -->
+<?php
+if (isset($_POST['user_login'])) {
+    $user_email = $_POST['user_email'];
+    $user_password = $_POST['user_password'];
+    // Check if user email is in the database
+    $select_query = "Select * from `user` where user_email='$user_email'";
+    $result = mysqli_query($con, $select_query);
+    //Count how many matches
+    $rows_count = mysqli_num_rows($result);
+    //Get the row data
+    $row_info = mysqli_fetch_assoc($result);
+    if ($rows_count > 0) {
+        //Check if the password typed matches what's in the database
+        if (password_verify($user_password, $row_info['user_password'])) {
+            echo "<script>alert('Login Successful')</script>";
+        } else {
+            echo "<script>alert('Invalid password')</script>";
+        }
+    } else {
+        echo "<script>alert('Invalid email, please correct it or register')</script>";
+    }
+}
+?>
