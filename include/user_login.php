@@ -22,7 +22,11 @@
                         <input type="text" id="user_name" class="form-control" placeholder="Please enter your username" autocomplete="off" required="required" name="user_name">
                         <!-- User password field -->
                         <label for="user_password" class="form-label py-3">Password:</label>
-                        <input type="text" id="user_password" class="form-control" placeholder="Please enter your password" autocomplete="off" required="required" name="user_password">
+                        <input type="password" id="user_password" class="form-control" placeholder="Please enter your password" autocomplete="off" required="required" name="user_password">
+                        <!-- Hide/show password checkbox -->
+                        <label for="showPassword">
+                            <input type="checkbox" id="showPassword"> Show Password
+                        </label>
                     </div>
                     <div class="text-center py-3">
                         <input type="submit" value="Login" class="bg-info py-2 px-2 border-0" name="user_login">
@@ -35,3 +39,17 @@
 </body>
 
 </html>
+
+<!-- Javascript code to change input type from text/password to show/hide password -->
+<script>
+    const passwordInput = document.getElementById('user_password');
+    const showPasswordCheckbox = document.getElementById('showPassword');
+
+    showPasswordCheckbox.addEventListener('change', function() {
+        if (showPasswordCheckbox.checked) {
+            passwordInput.type = 'text';
+        } else {
+            passwordInput.type = 'password';
+        }
+    });
+</script>

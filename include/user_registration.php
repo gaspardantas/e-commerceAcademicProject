@@ -33,7 +33,12 @@ include('connect.php');
                         <input type="email" id="user_email" class="form-control" placeholder="Please enter your email" autocomplete="off" required="required" name="user_email">
                         <!-- User password field -->
                         <label for="user_password" class="form-label py-3">Password:</label>
-                        <input type="text" id="user_password" class="form-control" placeholder="Please enter your password" autocomplete="off" required="required" name="user_password">
+                        <input type="password" id="user_password" class="form-control" placeholder="Please enter your password" autocomplete="off" required="required" name="user_password">
+                        <!-- Hide/show password checkbox -->
+                        <label for="showPassword">
+                            <input type="checkbox" id="showPassword"> Show Password
+                        </label>
+
                     </div>
                     <div class="text-center py-3">
                         <input type="submit" value="Register" class="bg-info py-2 px-2 border-0" name="user_register">
@@ -47,12 +52,28 @@ include('connect.php');
 
 </html>
 
+<!-- Javascript code to change input type from text/password to show/hide password -->
+<script>
+    const passwordInput = document.getElementById('user_password');
+    const showPasswordCheckbox = document.getElementById('showPassword');
+
+    showPasswordCheckbox.addEventListener('change', function() {
+        if (showPasswordCheckbox.checked) {
+            passwordInput.type = 'text';
+        } else {
+            passwordInput.type = 'password';
+        }
+    });
+</script>
+
 <?php
 if (isset($_POST['user_register'])) {
     $username = $_POST['username'];
     $user_address = $_POST['user_address'];
     $user_email = $_POST['user_email'];
     $user_password = $_POST['user_password'];
+    //hashing the password for security
+    $hash_password = password_hash($user_password, PASSWORD_DEFAULT);
     // Check if username is in the database
     $select_query = "Select * from `user` where user_email='$user_email'";
     $result = mysqli_query($con, $select_query);
@@ -61,7 +82,7 @@ if (isset($_POST['user_register'])) {
         echo "<script>alert('This email was registered before, please Log in')</script>";
     } else {
         // Insert info into the database
-        $insert_user = "INSERT INTO `user` (user_name, user_address, user_email, user_password) VALUES ('$username', '$user_address', '$user_email', '$user_password')";
+        $insert_user = "INSERT INTO `user` (user_name, user_address, user_email, user_password) VALUES ('$username', '$user_address', '$user_email', '$hash_password')";
         $result_query = mysqli_query($con, $insert_user);
         if ($result_query) {
             echo "<script>alert('User added successfully')</script>";
