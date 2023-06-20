@@ -1,5 +1,5 @@
-<!--Navigation Bar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light" p-0>
+<!--Navigation Bar to login-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow" p-0>
     <!--Logo-->
     <img src="./images/logo.png" height="40" width="40">
     <a class="navbar-brand" href="#">GameSpark</a>
@@ -11,18 +11,18 @@
             <li class="nav-item">
                 <a class="nav-link" href="index.php"><i class="fas fa-home"></i>Home</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="./include/construction_main.php"><i class="fas fa-shopping-cart"></i> Cart<sup>0</sup></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="./include/construction_main.php"><i class="fas fa-history"></i>Purchase History</a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a class="nav-link" href="./include/user_login.php"><i class="fas fa-sign-in-alt"></i>Login</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./include/construction_main.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
-            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="./include/logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+            </li> -->
             <li class="nav-item">
                 <a class="nav-link" href="./include/user_registration.php"><i class="fas fa-user-plus"></i>Sign Up</a>
             </li>

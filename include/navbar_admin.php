@@ -24,7 +24,7 @@
                 <a class="nav-link" href="../include/list_users.php"><i class="fas fa-list"></i>List Users</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../include/construction_admin.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                <a class="nav-link" href="../include/logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
             </li>
         </ul>
     </div>

@@ -14,6 +14,23 @@ include('connect.php');
 </head>
 
 <body>
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" p-0>
+        <!--Logo-->
+        <img src="../images/logo.png" height="40" width="40">
+        <a class="navbar-brand" href="#">GameSpark</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.php"><i class="fas fa-home"></i>Home</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--Form-->
     <div class="container-fluid">
         <h2 class="text-center my-3">User Login</h2>
         <div class="row d-flex align-items-center justify-content-center py-2">
@@ -60,25 +77,38 @@ include('connect.php');
 
 <!-- PHP code to login -->
 <?php
+//start session to save variables in the server
+session_start();
 if (isset($_POST['user_login'])) {
     $user_email = $_POST['user_email'];
     $user_password = $_POST['user_password'];
-    // Check if user email is in the database
-    $select_query = "Select * from `user` where user_email='$user_email'";
-    $result = mysqli_query($con, $select_query);
-    //Count how many matches
-    $rows_count = mysqli_num_rows($result);
-    //Get the row data
-    $row_info = mysqli_fetch_assoc($result);
-    if ($rows_count > 0) {
-        //Check if the password typed matches what's in the database
-        if (password_verify($user_password, $row_info['user_password'])) {
-            echo "<script>alert('Login Successful')</script>";
-        } else {
-            echo "<script>alert('Invalid password')</script>";
-        }
+    if ($user_email == 'admin@' & $user_password == 'admin@') {
+        header(("Location: ../admin/index.php"));
+        exit();
     } else {
-        echo "<script>alert('Invalid email, please correct it or register')</script>";
+        // Check if user email is in the database
+        $select_query = "Select * from `user` where user_email='$user_email'";
+        $result = mysqli_query($con, $select_query);
+        //Count how many matches
+        $rows_count = mysqli_num_rows($result);
+        //Get the row data
+        $row_info = mysqli_fetch_assoc($result);
+        //Save user_name in the server
+        $_SESSION['user_name'] = $row_info['user_name'];
+        $_SESSION['user_email'] = $row_info['user_email'];
+        if ($rows_count > 0) {
+            //Check if the password typed matches what's in the database
+            if (password_verify($user_password, $row_info['user_password'])) {
+                echo "<script>alert('Login Successful')</script>";
+                //open main page
+                header(("Location: ../index.php"));
+                exit();
+            } else {
+                echo "<script>alert('Invalid password')</script>";
+            }
+        } else {
+            echo "<script>alert('Invalid email, please correct it or register')</script>";
+        }
     }
 }
 ?>

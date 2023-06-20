@@ -15,6 +15,23 @@ include('connect.php');
 </head>
 
 <body>
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" p-0>
+    <!--Logo-->
+    <img src="../images/logo.png" height="40" width="40">
+    <a class="navbar-brand" href="#">GameSpark</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="../index.php"><i class="fas fa-home"></i>Home</a>
+            </li>
+        </ul>
+    </div>
+    <!-- The form  -->    
+    </nav>
     <div class="container-fluid">
         <h2 class="text-center my-3">User Registration</h2>
         <div class="row d-flex align-items-center justify-content-center py-2">
@@ -23,7 +40,7 @@ include('connect.php');
                 <form action="" method="post">
                     <div class="form-outline">
                         <!-- User name field -->
-                        <label for="username" class="form-label py-3">Username:</label>
+                        <label for="username" class="form-label py-3">User Name:</label>
                         <input type="text" id="username" class="form-control" placeholder="Please enter your username" autocomplete="off" required="required" name="username">
                         <!-- User address field -->
                         <label for="user_address" class="form-label py-3">Address:</label>
