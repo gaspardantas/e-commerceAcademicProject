@@ -12,10 +12,10 @@
                 <a class="nav-link" href="index.php"><i class="fas fa-home"></i>Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./include/construction_main.php"><i class="fas fa-shopping-cart"></i> Cart<sup>0</sup></a>
+                <a class="nav-link" href="./include/cart.php"><i class="fas fa-shopping-cart"></i> Cart<sup>0</sup></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./include/construction_main.php"><i class="fas fa-history"></i>Purchase History</a>
+                <a class="nav-link" href="./include/purchase_history_user.php"><i class="fas fa-history"></i>Purchase History</a>
             </li>
             <!-- <li class="nav-item">
                 <a class="nav-link" href="./include/user_login.php"><i class="fas fa-sign-in-alt"></i>Login</a>

@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect('localhost', 'root', '','gamespark');
+$con = mysqli_connect('localhost','root', '','gamespark');
 if (!$con) {
     die(mysqli_error($con));
 }

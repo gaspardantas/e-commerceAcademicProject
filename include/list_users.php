@@ -7,9 +7,8 @@ $result = mysqli_query($con, $sql);
 <!DOCTYPE html>
 <html>
 <!--Head-->
-
 <head>
-    <title>GameSpark</title>
+    <title>GameSpark - List of Users</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>

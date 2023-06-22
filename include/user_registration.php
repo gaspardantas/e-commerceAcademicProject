@@ -1,8 +1,6 @@
 <?php
 include('connect.php');
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,22 +13,9 @@ include('connect.php');
 </head>
 
 <body>
-    <!--Navigation Bar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" p-0>
-    <!--Logo-->
-    <img src="../images/logo.png" height="40" width="40">
-    <a class="navbar-brand" href="#">GameSpark</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon">
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="../index.php"><i class="fas fa-home"></i>Home</a>
-            </li>
-        </ul>
-    </div>
-    <!-- The form  -->    
+    <!--Navigation Bar Home-->
+    <?php include './navbar_home.php'; ?>
+    <!-- The form  -->
     </nav>
     <div class="container-fluid">
         <h2 class="text-center my-3">User Registration</h2>
@@ -55,7 +40,6 @@ include('connect.php');
                         <label for="showPassword">
                             <input type="checkbox" id="showPassword"> Show Password
                         </label>
-
                     </div>
                     <div class="text-center py-3">
                         <input type="submit" value="Register" class="bg-info py-2 px-2 border-0" name="user_register">
@@ -66,6 +50,35 @@ include('connect.php');
         </div>
     </div>
 </body>
+<!-- Action if user_register buttom is pressed -->
+<?php
+if (isset($_POST['user_register'])) {
+    $username = $_POST['username'];
+    $user_address = $_POST['user_address'];
+    $user_email = $_POST['user_email'];
+    $user_password = $_POST['user_password'];
+    //hashing the password for security
+    $hash_password = password_hash($user_password, PASSWORD_DEFAULT);
+    // Check if user email is in the database
+    $select_query = "Select * from `user` where user_email='$user_email'";
+    $result = mysqli_query($con, $select_query);
+    $rows_count = mysqli_num_rows($result);
+    if ($rows_count > 0) {
+        echo "<script>alert('This email was registered before. You will be directed to the login page')</script>";
+        echo "<script>window.location.href = './user_login.php';</script>";
+    } else {
+        // Insert info into the database
+        $insert_user = "INSERT INTO `user` (user_name, user_address, user_email, user_password) VALUES ('$username', '$user_address', '$user_email', '$hash_password')";
+        $result_query = mysqli_query($con, $insert_user);
+        if ($result_query) {
+            echo "<script>alert('User added successfully. You will be directed to the login page')</script>";
+            echo "<script>window.location.href = './user_login.php';</script>";
+        } else {
+            die(mysqli_error($con));
+        }
+    }
+}
+?>
 
 </html>
 
@@ -82,30 +95,3 @@ include('connect.php');
         }
     });
 </script>
-
-<?php
-if (isset($_POST['user_register'])) {
-    $username = $_POST['username'];
-    $user_address = $_POST['user_address'];
-    $user_email = $_POST['user_email'];
-    $user_password = $_POST['user_password'];
-    //hashing the password for security
-    $hash_password = password_hash($user_password, PASSWORD_DEFAULT);
-    // Check if user email is in the database
-    $select_query = "Select * from `user` where user_email='$user_email'";
-    $result = mysqli_query($con, $select_query);
-    $rows_count = mysqli_num_rows($result);
-    if ($rows_count > 0) {
-        echo "<script>alert('This email was registered before, please Log in')</script>";
-    } else {
-        // Insert info into the database
-        $insert_user = "INSERT INTO `user` (user_name, user_address, user_email, user_password) VALUES ('$username', '$user_address', '$user_email', '$hash_password')";
-        $result_query = mysqli_query($con, $insert_user);
-        if ($result_query) {
-            echo "<script>alert('User added successfully')</script>";
-        } else {
-            die(mysqli_error($con));
-        }
-    }
-}
-?>
