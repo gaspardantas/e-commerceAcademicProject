@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('connect.php');
 ?>
 <!-- Where it starts -->
 <!DOCTYPE html>
@@ -68,11 +69,15 @@ session_start();
       </div>
     </div>
   </div>
-  <!--Display footer-->
-  <?php include './include/footer.php'; ?>
+  <!--Display footer and calling the cart function-->
+  <?php
+  include './include/footer.php';
+
+  ?>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

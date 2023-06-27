@@ -28,7 +28,7 @@ include('connect.php');
                     <div class="form-outline">
                         <!-- User name field -->
                         <label for="user_email" class="form-label py-3">User email:</label>
-                        <input type="text" id="user_email" class="form-control" placeholder="Please enter your username" autocomplete="off" required="required" name="user_email">
+                        <input type="text" id="user_email" class="form-control" placeholder="Please enter your username" autocomplete="on" required="required" name="user_email">
                         <!-- User password field -->
                         <label for="user_password" class="form-label py-3">Password:</label>
                         <input type="password" id="user_password" class="form-control" placeholder="Please enter your password" autocomplete="off" required="required" name="user_password">
@@ -44,7 +44,12 @@ include('connect.php');
                 </form>
             </div>
         </div>
+    <!--Display footer and calling the cart function-->
+    <?php
+        include 'footer.php';
+    ?>
     </div>
+
 </body>
 <!-- PHP code to login when user_login button is pressed -->
 <?php
@@ -66,6 +71,7 @@ if (isset($_POST['user_login'])) {
         //Save user_name in the server
         $_SESSION['user_name'] = $row_info['user_name'];
         $_SESSION['user_email'] = $row_info['user_email'];
+        $_SESSION['user_id'] = $row_info['user_id'];
         if ($rows_count > 0) {
             //Check if the password typed matches what's in the database
             if (password_verify($user_password, $row_info['user_password'])) {

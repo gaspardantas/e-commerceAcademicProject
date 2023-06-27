@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect('localhost','root', '','gamespark');
+$con = mysqli_connect('localhost', 'root', '', 'gamespark');
 if (!$con) {
     die(mysqli_error($con));
 }
@@ -25,5 +25,10 @@ purchase table
 - user_id (FK)
 - purchase_total decimal (10,2)
 - purchase_date (timestamp)
+--------------------------------
+cart table
+- product_id: int (PK)
+- product_quantity: int
+- ip_address Varchar (255)
 ****************************************
 -->
