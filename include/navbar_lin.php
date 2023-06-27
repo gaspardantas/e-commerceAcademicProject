@@ -2,7 +2,8 @@
 <?php
 include('connect.php');
 //Cart function
-function cart(){
+function cart()
+{
     global $con;
     session_start();
     if (isset($_GET['add_to_cart'])) {
@@ -28,7 +29,8 @@ function cart(){
     }
 }
 //Cart count function
-function cart_count(){
+function cart_count()
+{
     global $con;
     $ip = get_ip_address();
     $select_query = "Select * from `cart` where ip_address='$ip'";
@@ -38,7 +40,8 @@ function cart_count(){
 }
 
 //Get IP adddress function
-function get_ip_address(){
+function get_ip_address()
+{
     global $con;
     if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
         // Check if IP is from shared internet
@@ -80,15 +83,15 @@ cart();
             <!-- <li class="nav-item">
                 <a class="nav-link" href="include/purchase_history_user.php"><i class="fas fa-history"></i>Purchase History</a>
             </li> -->
-             <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="./include/user_login.php"><i class="fas fa-sign-in-alt"></i>Login</a>
                 <php cart_count();?>
             </li>
-<!--             <li class="nav-item">
-                <a class="nav-link" href="./include/logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
-            </li> -->
-             <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="./include/user_registration.php"><i class="fas fa-user-plus"></i>Sign Up</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./include/team.php"><i class="fas fa-users"></i>Our Team</a>
             </li>
         </ul>
     </div>

@@ -87,9 +87,9 @@ cart();
             <li class="nav-item">
                 <a class="nav-link" href="./include/logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
             </li>
-             <!--<li class="nav-item">
-                <a class="nav-link" href="./include/user_registration.php"><i class="fas fa-user-plus"></i>Sign Up</a>
-            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="./include/team.php"><i class="fas fa-users"></i>Our Team</a>
+            </li>
         </ul>
     </div>
 </nav>
