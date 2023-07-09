@@ -2,12 +2,17 @@
 session_start();
 include('connect.php');
 
-// Handle form for +/- submissions
+// Handle form for +/-/purchase submissions
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $product_id = $_POST['product_id'];
     $query = "SELECT * FROM cart WHERE product_id = $product_id";
     $result = mysqli_query($con, $query);
     $row = mysqli_fetch_assoc($result);
+    if (!isset($_SESSION['user_name'])) {
+        $ip = 'temp';
+    }
+    // recovering ip address saved when user logged in
+    $ip = $_SESSION['ip'];
     if (isset($_POST['add'])) {
         $new_quantity = $row['product_quantity'] + 1;
         $update_query = "UPDATE cart SET product_quantity = $new_quantity WHERE product_id = $product_id";
@@ -19,8 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             mysqli_query($con, $update_query);
         } else {
             //delete the product with the id pressed
-            $delete_query = "DELETE FROM cart WHERE product_id = $product_id";
-            mysqli_query($con, $delete_query);
+            $delete_query = "DELETE FROM cart WHERE product_id = '$product_id' AND ip_address = '$ip'";
+            mysqli_query($con, $delete_query);            
         }
     } elseif (isset($_POST['purchase'])) {
         // Check if cart is empty
@@ -37,9 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo "<script>window.location.href = '../index.php';</script>";
             } else {
                 $ip = $_SESSION['ip'];
-
                 $user_id = $_SESSION['user_id'];
-
                 $grand_total = $_SESSION['grand_total'];
                 //Insert the purchase data into the purchase table
                 $insert_query = "INSERT INTO purchase (user_id, purchase_total) VALUES ($user_id, $grand_total)";
@@ -151,24 +154,13 @@ $result_cart = mysqli_query($con, $sql);
                             <button type="submit" class="btn btn-primary mx-2" name="purchase">Complete Purchase</button>
                         </form>
                     </td>
-                </tr>
- <!--                <tr>
-                    <td class="p-3 bg-light text-center border" colspan="5">
-                        <form method="post" action="../index.php">
-                            <button type="submit" class="btn btn-success mx-2" name="home">Continue Shopping</button>
-                        </form>
-                    </td>
-                </tr> -->
-                <!-- Purchase button -->
+                    <!-- Purchase button -->
             </table>
         </div>
     </div>
 
     <!--Display footer-->
     <?php include './footer.php'; ?>
-
-
-
 
 </body>
 

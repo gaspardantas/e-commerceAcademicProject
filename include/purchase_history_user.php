@@ -24,23 +24,13 @@ $result = mysqli_query($con, $sql);
             <!--Table-->
             <table b-5>
                 <tr>
-                    <th class="p-3 bg-success text-center text-light">User Name</th>
                     <th class="p-3 bg-dark text-center text-light">Purchase Total</th>
                     <th class="p-3 bg-info text-center text-light">Purchase Date</th>
                 </tr>
                 <!--While loop to display the user table-->
                 <?php while ($row = mysqli_fetch_assoc($result)) {
-                    $user_id = $row['user_id']; // Replace with the actual user ID
-                    $query = "SELECT user_name FROM user WHERE user_id = $user_id";
-                    $result_name = mysqli_query($con, $query);
-                    $row_name = mysqli_fetch_assoc($result_name);
-                    $user_name = $row_name['user_name'];
-                    
                 ?>
                     <tr>
-                        <td class="p-3 bg-light text-center border">
-                            <div><?php echo $user_name ?> </div>
-                        </td>
                         <td class="p-3 bg-light text-center border">
                             <div><?php echo $row['purchase_total'] ?> </div>
                         </td>

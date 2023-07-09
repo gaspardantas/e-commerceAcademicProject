@@ -5,12 +5,8 @@ include('connect.php');
 function cart()
 {
     global $con;
-    session_start();
     if (isset($_GET['add_to_cart'])) {
         global $con;
-        if (!isset($_SESSION['user_name'])) {
-            $user_name = $_SESSION['user_name'];
-        }
         $ip = get_ip_address();
         $_SESSION['ip'] = $ip;
         $get_product_id = $_GET['add_to_cart'];

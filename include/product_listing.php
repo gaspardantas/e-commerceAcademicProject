@@ -6,7 +6,7 @@ include('connect.php');
 <div class="row">
   <!-- fetching products order by rand()-->
   <?php
-  $select_query = "Select *from `product` order by product_id limit 0,6";
+  $select_query = "Select *from `product` order by product_name limit 0,6";
   $result_query = mysqli_query($con, $select_query);
   while ($row = mysqli_fetch_assoc($result_query)) {
     $product_id = $row['product_id'];
