@@ -1,6 +1,23 @@
 # e-commerce web application
 ## HTML, CSS, JavaScript, Bootstrap, MySQL, and PHP, were the tools that allowed the project to take life.
 
-Utilizing a blend of technology tools to craft an aesthetically appealing website with multiple functionalities of an e-commerce website.
+We developed a website for online commerce, enabling users to browse and purchase goods while administrators managed products. HTML, CSS, JavaScript, and Bootstrap were employed to craft a user-friendly design. A MySQL, PHP database was utilized to store client information, product details, and purchase history. The website was hosted on the 000webhost server, and GitHub served as our code repository. To oversee the project, MS Project was utilized, and Gantt charts were created to monitor our progress.
 
-Selecting an e-commerce project for academic study offers practical relevance, challenges students with complex tasks, fosters interdisciplinary learning, enhances career readiness, and may inspire entrepreneurial ventures.
+Criteria:
+User Interface: 
+Using HTML, CSS, JavaScript, and Bootstrap, we'll build a visually pleasing website. Both users and admins will have unique login information. Customers may effortlessly add items to their shopping carts and complete transactions. Customers can access their purchase history.
+
+Database: 
+To store client information, product details, and purchase history, a MySQL or PHP database will be set up.
+We'll make sure that customer login information is secure.
+Customers can access their purchase history.
+
+Cloud Hosting:
+We'll deploy the website and database on 00webhost to make it accessible and reliable.
+
+Code Repository:
+We'll use GitHub as our code repository to manage version control and collaborate effectively. All our HTML, CSS, JavaScript, and database scripts will be stored in the repository.
+
+Project Management:
+To stay organized, we'll use MS Project to track tasks, monitor progress, and create Gantt charts for milestone submissions.
+
