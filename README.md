@@ -21,3 +21,6 @@ We'll use GitHub as our code repository to manage version control and collaborat
 Project Management:
 To stay organized, we'll use MS Project to track tasks, monitor progress, and create Gantt charts for milestone submissions.
 
+A sample image of a Gantt Chart from the project:
+<img width="1615" alt="Gantt Chart - 7_9_2023" src="https://github.com/gaspardantas/e-commerce-academic-project/assets/106454643/48393ae3-06f4-40b8-b686-23dd38996fc0">
+
