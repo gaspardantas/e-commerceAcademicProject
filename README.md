@@ -23,4 +23,7 @@ To stay organized, we'll use MS Project to track tasks, monitor progress, and cr
 
 A sample image of a Gantt Chart from the project:
 <img width="1615" alt="Gantt Chart - 7_9_2023" src="https://github.com/gaspardantas/e-commerce-academic-project/assets/106454643/48393ae3-06f4-40b8-b686-23dd38996fc0">
-
+A sample image of the running webApp:
+<img width="1696" alt="Screenshot 2024-04-20 at 11 25 19 PM" src="https://github.com/gaspardantas/e-commerce-academic-project/assets/106454643/ac2c40ea-3f8e-4a76-86ff-cba2e009ecb4">
+<img width="1693" alt="Screenshot 2024-04-20 at 11 25 51 PM" src="https://github.com/gaspardantas/e-commerce-academic-project/assets/106454643/30c701bf-3646-4aa4-9d6c-e37a6d8be076">
+<img width="1693" alt="Screenshot 2024-04-20 at 11 25 35 PM" src="https://github.com/gaspardantas/e-commerce-academic-project/assets/106454643/45f62789-f22f-4cfa-a5f6-3f8d796ac655">
