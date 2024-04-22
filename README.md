@@ -22,5 +22,9 @@ Project Management:
 To stay organized, we'll use MS Project to track tasks, monitor progress, and create Gantt charts for milestone submissions.
 
 A sample image of a Gantt Chart from the project:
+<img width="1696" alt="Screenshot 2024-04-20 at 11 25 19 PM" src="https://github.com/gaspardantas/e-commerce-academic-project/assets/106454643/511989ea-6683-49b0-a608-8b431477ffd7">
+<img width="1693" alt="Screenshot 2024-04-20 at 11 25 35 PM" src="https://github.com/gaspardantas/e-commerce-academic-project/assets/106454643/71adc91c-8128-4efe-a1d8-70dac9dbdfac">
+<img width="1693" alt="Screenshot 2024-04-20 at 11 25 51 PM" src="https://github.com/gaspardantas/e-commerce-academic-project/assets/106454643/c84dd7be-6af5-4528-9172-404f53964db0">
+<img width="1224" alt="Screenshot 2024-04-20 at 11 17 41 PM" src="https://github.com/gaspardantas/e-commerce-academic-project/assets/106454643/0c3b6168-ede3-4b69-9048-f53890dfb8fd">
 <img width="1615" alt="Gantt Chart - 7_9_2023" src="https://github.com/gaspardantas/e-commerce-academic-project/assets/106454643/48393ae3-06f4-40b8-b686-23dd38996fc0">
 
